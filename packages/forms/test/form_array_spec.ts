@@ -730,7 +730,7 @@ describe('FormArray', () => {
       const simpleValidator = (c: FormArray) =>
           c.controls[0].value != 'correct' ? {'broken': true} : null;
 
-      const c = new FormControl(null);
+      const c = new FormControl<any>(null);
       const g = new FormArray([c], simpleValidator as ValidatorFn);
 
       c.setValue('correct');
